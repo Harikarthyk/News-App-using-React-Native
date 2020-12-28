@@ -4,13 +4,13 @@ import Subtitle from './Subtitle';
 import Title from './Title';
 
 function FlatCard({item}) {
-  const {title, desc, thumbnail} = item;
+  const {title, description, urlToImage} = item;
   return (
     <View style={styles.container}>
-      <Image source={{uri: thumbnail}} style={styles.image} />
+      <Image source={{uri: urlToImage}} style={styles.image} />
       <View style={styles.contentContainer}>
         <Title>{title}</Title>
-        <Subtitle>{desc}</Subtitle>
+        <Subtitle>{description}</Subtitle>
       </View>
     </View>
   );

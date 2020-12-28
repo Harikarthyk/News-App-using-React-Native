@@ -1,21 +1,36 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import BreakingNews from './app/Components/BreakingNews';
 import TechNews from './app/Components/TechNews';
 import FeaturedNews from './app/Components/FeaturedNews';
 import Screen from './app/Components/Screen';
 import SearchBar from './app/Components/SearchBar';
 import VerticalList from './app/Components/VerticalList';
+import SportsNews from './app/Components/SportsNews'
 import data from './fakeData';
-import {getHeadLines} from './client';
+import {getHeadLines, getNewsByCategory, getNewsByQuery} from './client';
 
 function App() {
-  const breakingNews = data.filter((item) => item.category === 'breaking-news');
-  const techNews = data.filter((item) => item.category === 'tech');
+  const [breakingNews, setBreakingNews] = useState([]);
+  const [techNews, setTechNews] = useState([]);
+  const [sportsNews, setSportsNews] = useState([]);
 
-  const politicalNews = data.filter((item) => item.category === 'political');
   useEffect(() => {
     getHeadLines()
-      .then((result) => console.log(result))
+      .then((result) => {
+        setBreakingNews(result.articles);
+      })
+      .catch((error) => console.error(error));
+
+    getNewsByCategory('technology')
+      .then((result) => {
+        setTechNews(result.articles);
+      })
+      .catch((error) => console.error(error));
+
+    getNewsByCategory('sports')
+      .then((result) => {
+        setSportsNews(result.articles);
+      })
       .catch((error) => console.error(error));
   }, []);
   return (
@@ -33,9 +48,9 @@ function App() {
           }}
         />
         <BreakingNews data={breakingNews} />
-        <VerticalList title={'Political News'} data={politicalNews} />
+        <SportsNews data={sportsNews} />
+        {/* <VerticalList title={'Sports News'} data={sportsNews} /> */}
         <TechNews data={techNews} />
-        <VerticalList title={'Political News'} data={politicalNews} />
       </Screen>
     </>
   );

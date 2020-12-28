@@ -19,7 +19,7 @@ function VerticalList({title, data}) {
 const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
-    marginBottom: 50,
+    marginBottom: 20,
   },
 });
 

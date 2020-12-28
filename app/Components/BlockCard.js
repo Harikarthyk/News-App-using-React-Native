@@ -4,13 +4,13 @@ import Subtitle from './Subtitle';
 import Title from './Title';
 
 function BlockCard({style, imageStyle, item}) {
-  const {title, desc, thumbnail} = item;
+  const {title, description, urlToImage} = item;
   return (
     <View style={[styles.container, style]}>
-      <Image style={[styles.image, imageStyle]} source={{uri: thumbnail}} />
+      <Image style={[styles.image, imageStyle]} source={{uri: urlToImage}} />
       <View style={styles.contentContainer}>
         <Title>{title}</Title>
-        <Subtitle>{desc}</Subtitle>
+        <Subtitle>{description}</Subtitle>
       </View>
     </View>
   );
