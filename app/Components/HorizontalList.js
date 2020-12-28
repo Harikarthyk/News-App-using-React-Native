@@ -1,20 +1,32 @@
 import React from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, View, Dimensions} from 'react-native';
+import BlockCard from './BlockCard';
 import SmallCard from './SmallCard';
 import Title from './Title';
 
-function HorizontalList({title, data}) {
+const {width} = Dimensions.get('window');
+function HorizontalList({title, data, size}) {
   return (
     <View style={{marginVertical: 10}}>
       <View style={{marginVertical: 10}}>
-        <Title size={20}>{title}</Title>
+        <Title size={size}>{title}</Title>
       </View>
       <FlatList
         data={data}
         keyExtractor={(item, index) => index.toString()}
         horizontal
         showsHorizontalScrollIndicator={false}
-        renderItem={({item}) => <SmallCard item={item} />}
+        renderItem={({item}) => {
+          return title === 'Top Headlines' ? (
+            <BlockCard
+              size={20}
+              style={{marginRight: 10, width: width - 45}}
+              item={item}
+            />
+          ) : (
+            <SmallCard item={item} />
+          );
+        }}
       />
     </View>
   );
