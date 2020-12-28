@@ -10,7 +10,7 @@ function Subtitle({children, noofLines = 2, size = 13}) {
 }
 
 const styles = StyleSheet.create({
-  title: {fontWeight: '800'},
+  title: {fontWeight: '800', color: 'grey'},
 });
 
 export default Subtitle;

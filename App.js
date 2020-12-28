@@ -48,28 +48,48 @@ function App() {
     //Sports
     getNewsByCategory('sports')
       .then((result) => {
-        setSportsNews(result.articles);
+        let arr = result.articles.slice(0, 5);
+        if (arr.length) {
+          arr.push({type: 'viewMore', category: 'sports'});
+
+          setSportsNews(arr);
+        }
       })
       .catch((error) => console.error(error));
 
     //Health
     getNewsByCategory('health')
       .then((result) => {
-        setHealthNews(result.articles);
+        let arr = result.articles.slice(0, 5);
+        if (arr.length) {
+          arr.push({type: 'viewMore', category: 'health'});
+
+          setHealthNews(arr);
+        }
       })
       .catch((error) => console.error(error));
 
     //Entertainment
     getNewsByCategory('entertainment')
       .then((result) => {
-        setEntertainmentNews(result.articles);
+        let arr = result.articles.slice(0, 5);
+        if (arr.length) {
+          arr.push({type: 'viewMore', category: 'entertainment'});
+
+          setEntertainmentNews(arr);
+        }
       })
       .catch((error) => console.error(error));
 
     //Business
     getNewsByCategory('business')
       .then((result) => {
-        setBusinessNews(result.articles);
+        let arr = result.articles.slice(0, 5);
+        if (arr.length) {
+          arr.push({type: 'viewMore', category: 'business'});
+
+          setBusinessNews(arr);
+        }
       })
       .catch((error) => console.error(error));
   }, []);
