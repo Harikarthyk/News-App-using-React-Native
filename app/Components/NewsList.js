@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {ScrollView, StyleSheet, Text} from 'react-native';
 import {set} from 'react-native-reanimated';
-import {getHeadLines, getNewsByCategory} from '../../client';
+import {getHeadLines, getNewsByCategory, getNewsByQuery} from '../../client';
 import VerticalList from './VerticalList';
 
 function NewsList(props) {
   const category = props.route.params.category;
   const [data, setData] = useState([]);
   useEffect(() => {
+    if (!category) return;
     if (category === 'headlines') {
       getHeadLines()
         .then((result) => {
@@ -22,6 +23,11 @@ function NewsList(props) {
     getNewsByCategory(category)
       .then((result) => {
         if (result) setData(result.articles);
+        if (result && result.articles.length === 0) {
+          getNewsByQuery(category).then((r) => {
+            if (r) setData(r.articles);
+          });
+        }
       })
       .catch((error) => console.error(error));
   }, []);

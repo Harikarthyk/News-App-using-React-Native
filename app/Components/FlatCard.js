@@ -5,7 +5,7 @@ import Subtitle from './Subtitle';
 import {useNavigation} from '@react-navigation/native';
 import Title from './Title';
 
-function FlatCard({item,category}) {
+function FlatCard({item, category}) {
   const {title, description, urlToImage} = item;
   const navigation = useNavigation();
   return (

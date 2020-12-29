@@ -12,6 +12,7 @@ import Health from './Health';
 import Entertainment from './Entertainment';
 
 function Home() {
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [breakingNews, setBreakingNews] = useState([]);
   const [techNews, setTechNews] = useState([]);
   const [sportsNews, setSportsNews] = useState([]);
@@ -36,6 +37,7 @@ function Home() {
     getNewsByCategory('technology')
       .then((result) => {
         if (!result) return;
+
         let arr = result.articles.slice(0, 5);
         if (arr.length) {
           arr.push({type: 'viewMore', category: 'technology'});
@@ -100,8 +102,8 @@ function Home() {
 
   return (
     <>
-      <Screen>
-        <SearchBar />
+      <Screen isSearchFocused={isSearchFocused}>
+        <SearchBar setIsSearchFocused={setIsSearchFocused} />
 
         <BreakingNews data={breakingNews} />
         <SportsNews data={sportsNews} />

@@ -1,11 +1,55 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {getNewsByQuery} from '../../client';
 import {StyleSheet, TextInput, View} from 'react-native';
+import SearchModel from './SearchModel';
 
-function SearchBar() {
+let timeOutId;
+const debounce = (func, delay) => {
+  return () => {
+    if (timeOutId) clearTimeout(timeOutId);
+
+    timeOutId = setTimeout(() => {
+      console.log(func, delay);
+      func();
+    }, delay);
+  };
+};
+function SearchBar({setIsSearchFocused}) {
+  const [data, setData] = useState([]);
+  const [query, setQuery] = useState('');
+  const [visible, setVisible] = useState(false);
+
+  const handleSearch = () => {
+    getNewsByQuery(query).then((result) => {
+      if (result) {
+        if (result && result.articles) setData(result.articles);
+      }
+      return;
+    });
+  };
+
+  const debounceSearch = debounce(handleSearch, 500);
   return (
-    <View style={styles.container}>
-      <TextInput style={styles.searchInput} placeholder="Search here ... " />
-    </View>
+    <>
+      <View style={styles.container}>
+        <TextInput
+          value={query}
+          onChangeText={(e) => {
+            setQuery(e);
+            debounceSearch();
+            setVisible(true);
+          }}
+          onFocus={() => setIsSearchFocused(true)}
+          onBlur={() => {
+            setVisible(false);
+            setIsSearchFocused(false);
+          }}
+          style={styles.searchInput}
+          placeholder="Search here ... "
+        />
+      </View>
+      <SearchModel data={data} query={query} visible={visible} />
+    </>
   );
 }
 

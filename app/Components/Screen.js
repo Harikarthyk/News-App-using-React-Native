@@ -1,8 +1,12 @@
 import React from 'react';
 import {StyleSheet, StatusBar, ScrollView} from 'react-native';
 
-function Screen({children}) {
-  return <ScrollView style={styles.container}>{children}</ScrollView>;
+function Screen({children, isSearchFocused}) {
+  return (
+    <ScrollView scrollEnabled={!isSearchFocused} style={styles.container}>
+      {children}
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
