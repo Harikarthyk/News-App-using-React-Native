@@ -16,7 +16,7 @@ function SearchModel({data, visible, query}) {
             alignItems: 'center',
             fontWeight: 'bold',
             color: 'white',
-            fontSize: 21,
+            fontSize: 20,
           }}>
           No result found
         </Text>
