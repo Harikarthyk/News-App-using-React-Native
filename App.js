@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from './app/Components/Home';
 import NewsDetail from './app/Components/NewsDetail';
 import NewsList from './app/Components/NewsList';
+import Splash from './app/Components/Splash';
 
 const Stack = createStackNavigator();
 
@@ -26,12 +27,13 @@ function App() {
             marginTop: 20,
           },
         }}
-        initialRouteName="Home">
+        initialRouteName="Splash">
         <Stack.Screen
           options={{headerShown: false}}
           name="Home"
           component={Home}
         />
+        <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="News Detail" component={NewsDetail} />
         <Stack.Screen name="NewsList" component={NewsList} />
       </Stack.Navigator>

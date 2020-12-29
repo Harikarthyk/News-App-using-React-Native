@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {ScrollView, StyleSheet, Text} from 'react-native';
-import {set} from 'react-native-reanimated';
 import {getHeadLines, getNewsByCategory, getNewsByQuery} from '../../client';
 import VerticalList from './VerticalList';
 
