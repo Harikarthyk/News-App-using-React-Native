@@ -15,6 +15,7 @@ function BlockCard({style, imageStyle, item, size, category}) {
   if (item.type) {
     return (
       <TouchableOpacity
+        style={styles.viewMore}
         onPress={() =>
           navigation.navigate('NewsList', {category: item.category})
         }>

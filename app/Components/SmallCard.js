@@ -1,13 +1,24 @@
 import React from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 import BlockCard from './BlockCard';
 import ViewMore from './ViewMore';
 
 const {width} = Dimensions.get('window');
 
 function SmallCard({item, category}) {
+  const navigation = useNavigation();
   if (item.type) {
-    return <ViewMore style={styles.viewMore} />;
+    return (
+      <TouchableOpacity
+        style={styles.viewMore}
+        onPress={() =>
+          navigation.navigate('NewsList', {category: item.category})
+        }>
+        <ViewMore style={styles.viewMore} />
+      </TouchableOpacity>
+    );
   }
   return (
     <BlockCard
