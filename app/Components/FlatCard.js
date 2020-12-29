@@ -1,18 +1,24 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import Subtitle from './Subtitle';
 import Title from './Title';
 
 function FlatCard({item}) {
   const {title, description, urlToImage} = item;
   return (
-    <View style={styles.container}>
-      <Image source={{uri: urlToImage}} style={styles.image} />
-      <View style={styles.contentContainer}>
-        <Title>{title}</Title>
-        <Subtitle>{description}</Subtitle>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate('News Detail', {item: item, category: category})
+      }>
+      <View style={styles.container}>
+        <Image source={{uri: urlToImage}} style={styles.image} />
+        <View style={styles.contentContainer}>
+          <Title>{title}</Title>
+          <Subtitle>{description}</Subtitle>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

@@ -62,11 +62,7 @@ function NewsDetail(props) {
           </Text>
         </View>
       </View>
-      <HorizontalList
-        title={props.route.params.category}
-        size={22}
-        data={releatedNews}
-      />
+      <HorizontalList title={'Related News'} size={21} data={releatedNews} />
     </ScrollView>
   );
 }
