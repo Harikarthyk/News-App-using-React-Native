@@ -3,7 +3,9 @@ export const getHeadLines = () => {
   return fetch(
     `http://newsapi.org/v2/top-headlines?country=in&sortBy=popularity&apiKey=5ee5f5d6c4d94c178285c633951212bb`,
   )
-    .then((response) => response.json())
+    .then((response) => {
+      return response.json();
+    })
     .catch((error) => console.error(error));
 };
 

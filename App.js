@@ -24,6 +24,7 @@ function App() {
     //Headlines
     getHeadLines()
       .then((result) => {
+        if (!result) return;
         let arr = result.articles.slice(0, 5);
         if (arr.length) {
           arr.push({type: 'viewMore', category: 'headlines'});
@@ -36,6 +37,7 @@ function App() {
     //Technology
     getNewsByCategory('technology')
       .then((result) => {
+        if (!result) return;
         let arr = result.articles.slice(0, 5);
         if (arr.length) {
           arr.push({type: 'viewMore', category: 'technology'});
@@ -48,6 +50,7 @@ function App() {
     //Sports
     getNewsByCategory('sports')
       .then((result) => {
+        if (!result) return;
         let arr = result.articles.slice(0, 5);
         if (arr.length) {
           arr.push({type: 'viewMore', category: 'sports'});
@@ -60,6 +63,7 @@ function App() {
     //Health
     getNewsByCategory('health')
       .then((result) => {
+        if (!result) return;
         let arr = result.articles.slice(0, 5);
         if (arr.length) {
           arr.push({type: 'viewMore', category: 'health'});
@@ -72,6 +76,7 @@ function App() {
     //Entertainment
     getNewsByCategory('entertainment')
       .then((result) => {
+        if (!result) return;
         let arr = result.articles.slice(0, 5);
         if (arr.length) {
           arr.push({type: 'viewMore', category: 'entertainment'});
@@ -84,6 +89,7 @@ function App() {
     //Business
     getNewsByCategory('business')
       .then((result) => {
+        if (!result) return;
         let arr = result.articles.slice(0, 5);
         if (arr.length) {
           arr.push({type: 'viewMore', category: 'business'});
