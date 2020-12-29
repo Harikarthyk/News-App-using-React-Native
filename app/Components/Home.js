@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import BreakingNews from './BreakingNews';
 import TechNews from './TechNews';
-// import FeaturedNews from './app/Components/FeaturedNews';
 import Screen from './Screen';
 import SearchBar from './SearchBar';
-// import VerticalList from './app/Components/VerticalList';
 import SportsNews from './SportsNews';
 import {getHeadLines, getNewsByCategory} from '../../client';
 import Business from './Business';

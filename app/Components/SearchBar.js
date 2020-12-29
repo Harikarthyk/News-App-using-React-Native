@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {getNewsByQuery} from '../../client';
 import {StyleSheet, TextInput, View} from 'react-native';
 import SearchModel from './SearchModel';
@@ -7,9 +7,7 @@ let timeOutId;
 const debounce = (func, delay) => {
   return () => {
     if (timeOutId) clearTimeout(timeOutId);
-
     timeOutId = setTimeout(() => {
-      console.log(func, delay);
       func();
     }, delay);
   };
@@ -28,7 +26,7 @@ function SearchBar({setIsSearchFocused}) {
     });
   };
 
-  const debounceSearch = debounce(handleSearch, 500);
+  const debounceSearch = debounce(handleSearch, 450);
   return (
     <>
       <View style={styles.container}>
