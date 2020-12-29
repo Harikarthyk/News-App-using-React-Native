@@ -3,23 +3,31 @@ import {Image, StyleSheet, Dimensions, View} from 'react-native';
 import Subtitle from './Subtitle';
 import Title from './Title';
 import ViewMore from './ViewMore';
+import {useNavigation} from '@react-navigation/native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const {width} = Dimensions.get('window');
 
-function BlockCard({style, imageStyle, item, size}) {
+function BlockCard({style, imageStyle, item, size, category}) {
   const {title, description, urlToImage} = item;
 
+  const navigation = useNavigation();
   if (item.type) {
     return <ViewMore style={styles.viewMore} />;
   }
   return (
-    <View style={[styles.container, style]}>
-      <Image style={[styles.image, imageStyle]} source={{uri: urlToImage}} />
-      <View style={styles.contentContainer}>
-        <Title size={size}>{title}</Title>
-        <Subtitle>{description}</Subtitle>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate('News Detail', {item: item, category: category})
+      }>
+      <View style={[styles.container, style]}>
+        <Image style={[styles.image, imageStyle]} source={{uri: urlToImage}} />
+        <View style={styles.contentContainer}>
+          <Title size={size}>{title}</Title>
+          <Subtitle>{description}</Subtitle>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

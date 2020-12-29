@@ -20,11 +20,12 @@ function HorizontalList({title, data, size}) {
           return title === 'Top Headlines' ? (
             <BlockCard
               size={20}
+              category={title}
               style={{marginRight: 10, width: width - 45}}
               item={item}
             />
           ) : (
-            <SmallCard item={item} />
+            <SmallCard category={title} item={item} />
           );
         }}
       />

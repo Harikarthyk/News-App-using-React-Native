@@ -5,12 +5,17 @@ import ViewMore from './ViewMore';
 
 const {width} = Dimensions.get('window');
 
-function SmallCard({item}) {
+function SmallCard({item, category}) {
   if (item.type) {
     return <ViewMore style={styles.viewMore} />;
   }
   return (
-    <BlockCard item={item} style={styles.container} imageStyle={styles.image} />
+    <BlockCard
+      item={item}
+      style={styles.container}
+      category={category}
+      imageStyle={styles.image}
+    />
   );
 }
 
