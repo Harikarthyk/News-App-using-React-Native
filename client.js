@@ -1,5 +1,6 @@
 // const API_KEY = '22d0ea0f8fe848389rb1e7a5c8a727605';
-const API_KEY = '5ee5f5d6c4d94c178285c633951212bb';
+const API_KEY = 'fd18b9fe68704c9cb6b8c8615670894d';
+// const API_KEY = '5ee5f5d6c4d94c178285c633951212bb';
 //Headlines
 export const getHeadLines = () => {
   return fetch(
