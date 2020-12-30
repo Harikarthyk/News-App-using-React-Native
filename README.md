@@ -28,7 +28,6 @@ News App using React Native - All the news are fetched from news API (https://ne
 <img src="https://user-images.githubusercontent.com/54505967/103327216-a6827d80-4a79-11eb-822b-ba8cfdbc4b9b.jpeg" data-canonical-src="https://user-images.githubusercontent.com/54505967/103327216-a6827d80-4a79-11eb-822b-ba8cfdbc4b9b.jpeg" width="200" height="400" />
 
 
-[![Watch the video](
-<img src="https://user-images.githubusercontent.com/54505967/103327216-a6827d80-4a79-11eb-822b-ba8cfdbc4b9b.jpeg" data-canonical-src="https://user-images.githubusercontent.com/54505967/103327216-a6827d80-4a79-11eb-822b-ba8cfdbc4b9b.jpeg" width="200" height="400" />)](https://user-images.githubusercontent.com/54505967/103325527-2e648980-4a72-11eb-9f4e-41a92763c4c7.mp4)
+[![Watch the video]](https://user-images.githubusercontent.com/54505967/103325527-2e648980-4a72-11eb-9f4e-41a92763c4c7.mp4)
 
 
