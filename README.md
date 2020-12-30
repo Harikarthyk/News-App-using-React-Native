@@ -12,6 +12,10 @@ News App using React Native - All the news are fetched from news API (https://ne
 
 <img src="https://user-images.githubusercontent.com/54505967/103327208-a2eef680-4a79-11eb-9a4a-4b0cbec137fc.jpeg" data-canonical-src="https://user-images.githubusercontent.com/54505967/103327208-a2eef680-4a79-11eb-9a4a-4b0cbec137fc.jpeg" width="200" height="400" />
 
+
+<img src="https://user-images.githubusercontent.com/54505967/103327215-a5e9e700-4a79-11eb-9c27-c9779e0e49cd.jpeg" data-canonical-src="https://user-images.githubusercontent.com/54505967/103327215-a5e9e700-4a79-11eb-9c27-c9779e0e49cd.jpeg" width="200" height="400" />
+
+
 <img src="https://user-images.githubusercontent.com/54505967/103327209-a4202380-4a79-11eb-93c4-2881d3f15110.jpeg" data-canonical-src="https://user-images.githubusercontent.com/54505967/103327209-a4202380-4a79-11eb-93c4-2881d3f15110.jpeg" width="200" height="400" />
 
 
@@ -27,8 +31,6 @@ News App using React Native - All the news are fetched from news API (https://ne
 
 <img src="https://user-images.githubusercontent.com/54505967/103327213-a5515080-4a79-11eb-8489-5561700d4625.jpeg" data-canonical-src="https://user-images.githubusercontent.com/54505967/103327213-a5515080-4a79-11eb-8489-5561700d4625.jpeg" width="200" height="400" />
 
-
-<img src="https://user-images.githubusercontent.com/54505967/103327215-a5e9e700-4a79-11eb-9c27-c9779e0e49cd.jpeg" data-canonical-src="https://user-images.githubusercontent.com/54505967/103327215-a5e9e700-4a79-11eb-9c27-c9779e0e49cd.jpeg" width="200" height="400" />
 
 
 
